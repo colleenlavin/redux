@@ -8,7 +8,7 @@ import store from '../../redux/store';
 import Lyrics from '../components/lyrics'
 import setLyrics from '../../redux/action-creators/lyrics'
 import axios from 'axios'
-
+import thunkMiddleware from 'redux-thunk'
 
 export default class extends Component {
     constructor() {
