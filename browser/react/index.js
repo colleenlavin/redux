@@ -11,6 +11,7 @@ import NewPlaylistContainer from './containers/NewPlaylistContainer';
 import Playlist from './components/Playlist';
 import store from '../redux/store';
 import {setLyrics} from '../redux/action-creators/lyrics';
+import LyricsContainer from './containers/LyricsContainer';
 
 console.log('-------------------------');
 console.log('State before any actions: ', store.getState());
@@ -39,6 +40,7 @@ ReactDOM.render(
       </Route>
       <Route path="/new-playlist" component={NewPlaylistContainer} />
       <Route path="playlists/:playlistId" component={Playlist} />
+      <Route path="/lyrics" component={LyricsContainer} />
       <IndexRedirect to='/albums' />
     </Route>
   </Router>,
