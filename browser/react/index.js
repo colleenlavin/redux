@@ -9,6 +9,23 @@ import Artist from './components/Artist';
 import Songs from './components/Songs';
 import NewPlaylistContainer from './containers/NewPlaylistContainer';
 import Playlist from './components/Playlist';
+import store from '../redux/store';
+import {setLyrics} from '../redux/action-creators/lyrics';
+
+console.log('-------------------------');
+console.log('State before any actions: ', store.getState());
+
+const inTheAirTonightAction = setLyrics('I can feel it coming in the air tonight ... hold on ...');
+store.dispatch(inTheAirTonightAction);
+
+console.log('-------------------------');
+console.log('State after first SET_LYRICS action: ', store.getState());
+
+const rickRollAction = setLyrics('Never gonna give you up, never gonna let you down');
+store.dispatch(rickRollAction);
+
+console.log('-------------------------');
+console.log('State after second SET_LYRICS action: ', store.getState());
 
 ReactDOM.render(
   <Router history={hashHistory}>
